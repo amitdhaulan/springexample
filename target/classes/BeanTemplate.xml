@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="vehicle" abstract="true">
+		<property name="type" value="Vehicle" />
+		<property name="ignition" value="Auto-Ignition" />
+	</bean>
+
+	<bean id="car" class="spring.bean.template.Car" parent="vehicle"
+		scope="prototype">
+		<property name="dicky" value="Flat dicky" />
+		<property name="wheel" value="Four Wheeler" />
+		<property name="fuel" value="Petrol" />
+	</bean>
+
+	<bean id="inithelloworld" class="spring.bean.template.InitHelloWorld" />
+
+	<bean id="scooter" class="spring.bean.template.Scooter" parent="vehicle"
+		scope="prototype">
+		<property name="dicky" value="No dicky" />
+		<property name="wheel" value="Two Wheeler" />
+		<property name="fuel" value="Petrol" />
+	</bean>
+
+</beans>
